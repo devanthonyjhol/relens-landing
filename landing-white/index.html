@@ -1,0 +1,478 @@
+<!--
+CONTRATO DE DIREÇÃO - Relens landing v2 (Persuade)
+
+THESIS: traduzir a homepage da Superpower (superpower.com) para o mundo do
+Relens: cinema quente de verdade no hero, convicção de categoria, ritmo de
+seções alternando claro/escuro e um footer que também vende. Nada de template
+SaaS: a página inteira é uma composição.
+
+OWN-WORLD (variacao branca): fundo único #FFFFFF em todas as sessões
+(inclusive announcements), texto escuro e cinzas neutros, vermillon #FC5F2B
+como único acento. Apenas a hero mantém o fundo preto. Satoshi
+auto-hospedada, caixa baixa no wordmark. Vídeo editorial real no hero e no
+footer (placeholders licenciados pela direção, substituir antes do
+lançamento).
+
+STORY: quem chega depois de uma briga repetida entende em segundos que o
+Relens é um mapa privado e corrigível: fato separado de interpretação, lacunas
+explícitas, próximo passo escolhido por você. Sem terapia, sem veredito, sem
+depender do parceiro.
+
+STRUCTURE (espelho da Superpower, traduzida):
+barra de aviso -> hero em vídeo com pilares -> statement -> como funciona
+(head + 4 cards + palco escuro com o artefato interativo) -> membership
+("O Relens inclui muito mais", checklist de 11 em duas colunas
+centralizadas, sem CTA) -> princípios -> manifesto (uma linha grande com
+acento vermillon + texto menor centralizado, sem imagem, fundo claro
+separado dos princípios) -> perguntas -> convite mesclado ao statement final
+("Clareza é o seu superpoder" + card de pré-lançamento logo abaixo).
+Manifesto claro, perguntas em fundo escuro, convite/statement final em
+fundo claro sem caixa -> footer branco com divisória superior (captura de
+e-mail + vídeo do fundador + QR + colunas de páginas + legal).
+
+FORM: página estática única, mobile-first, PT-BR, CTA único de lista de
+convite (mailto temporário), âncora sem número, manifesto no lugar de
+depoimentos. Decisões pinadas pelo usuário em 2026-08-04.
+-->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relens · O mapa da sua relação</title>
+  <meta name="description" content="Em 20 a 30 minutos, o Relens organiza o que aconteceu na sua relação, separa fato de interpretação e prepara a próxima conversa difícil. Sem terapia, sem nota, sem veredito.">
+  <meta property="og:title" content="Relens · O mapa da sua relação">
+  <meta property="og:description" content="Um mapa privado e corrigível para entender o que está acontecendo na sua relação e preparar a próxima conversa difícil.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/relens-atmosphere.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FC5F2B'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='700' text-anchor='middle' fill='%23181614'%3Er%3C/text%3E%3C/svg%3E">
+  <script>
+    /* Gate de motion: aplicado antes do CSS para evitar flash */
+    (function () {
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+        document.documentElement.classList.add("motion-ready");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css?v=6">
+</head>
+<body>
+  <a class="skip-link" href="#principal">Pular para o conteúdo</a>
+
+  <header class="site-head" id="site-head">
+    <div class="announce">
+      <a class="announce-link" href="#convite" data-announce>
+        <span class="announce-msg is-active">Pré-lançamento: as primeiras vagas do Relens serão por convite</span>
+        <span class="announce-msg">Guia gratuito: como preparar uma conversa difícil</span>
+        <span class="announce-msg">Sem terapia, sem nota, sem veredito. Um mapa</span>
+        <span class="announce-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+    <nav class="nav" aria-label="Principal">
+      <a class="wordmark" href="#topo" aria-label="Relens, início">relens</a>
+      <div class="nav-links">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#principios">Princípios</a>
+        <a href="#manifesto">Manifesto</a>
+        <a href="#perguntas">Perguntas</a>
+      </div>
+      <a class="btn btn--solid btn--sm" href="#convite">Entrar na lista</a>
+    </nav>
+  </header>
+
+  <main id="principal">
+
+    <!-- HERO -->
+    <section class="hero" id="topo" aria-labelledby="hero-titulo">
+      <div class="hero-media" aria-hidden="true">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto"
+               poster="media/hero-poster.jpg">
+          <source src="media/sp-hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-scrim"></div>
+      </div>
+
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Pré-lançamento &middot; vagas por convite</p>
+        <h1 id="hero-titulo"><span class="h-line">O mapa da sua relação.</span></h1>
+        <p class="hero-lede">Em 20 a 30 minutos, você organiza o que aconteceu, separa fato de interpretação e prepara a próxima conversa difícil. Sem terapia, sem nota, sem precisar do parceiro.</p>
+        <div class="hero-actions">
+          <a class="btn btn--solid" href="#convite">Entrar na lista</a>
+          <a class="hero-link" href="#como-funciona">Ver como funciona <span class="arrow" aria-hidden="true">&#8599;</span></a>
+        </div>
+        <ul class="hero-badges" aria-label="Compromissos do produto">
+          <li>Uso individual</li>
+          <li>Privado por padrão</li>
+          <li>Corrigível a qualquer momento</li>
+        </ul>
+      </div>
+
+      <ul class="pillars" aria-label="O que o Relens entrega">
+        <li>
+          <strong>Clareza</strong>
+          <span>O padrão, não o veredito</span>
+        </li>
+        <li>
+          <strong>Autonomia</strong>
+          <span>O próximo passo é seu</span>
+        </li>
+        <li>
+          <strong>Privacidade</strong>
+          <span>Só você vê o seu mapa</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- STATEMENT -->
+    <section class="intro">
+      <div class="wrap">
+        <p class="intro-line">Não é um teste. Não é uma nota. <span class="intro-accent">São os padrões.</span></p>
+        <p class="intro-sub">O Relens organiza a sua perspectiva em evidências, hipóteses e lacunas, para você enxergar o padrão antes da próxima conversa.</p>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="hiw" id="como-funciona" aria-labelledby="hiw-titulo">
+      <div class="wrap">
+        <div class="hiw-head">
+          <h2 id="hiw-titulo">Como funciona</h2>
+          <p class="hiw-sub">Do relato ao próximo passo, em quatro movimentos.</p>
+        </div>
+
+        <div class="hiw-cards">
+          <article class="hiw-card">
+            <p class="hiw-card-num">01</p>
+            <div class="hiw-card-shot" aria-hidden="true">
+              <div class="mini-artifact mini-artifact--prompt">
+                <p class="mini-meta">pergunta 3 de 7</p>
+                <p class="mini-question">Como foi a última conversa difícil?</p>
+                <p class="mini-input">Escreva ou fale, do seu jeito</p>
+              </div>
+            </div>
+            <h3>Você conta</h3>
+            <p>Texto ou voz, uma pergunta por vez, no seu ritmo. Sem julgamento.</p>
+          </article>
+
+          <article class="hiw-card">
+            <p class="hiw-card-num">02</p>
+            <div class="hiw-card-shot" aria-hidden="true">
+              <div class="mini-artifact mini-artifact--loreline">
+                <p class="mini-meta">Loreline</p>
+                <ol class="mini-track">
+                  <li><span>há 6 semanas</span><span>conversa adiada</span><span class="mini-tag">lacuna</span></li>
+                  <li><span>há 3 semanas</span><span>&ldquo;você nunca me escuta&rdquo;</span><span class="mini-tag">fato</span></li>
+                  <li><span>hoje</span><span>o padrão aparece</span><span class="mini-tag">hipótese</span></li>
+                </ol>
+              </div>
+            </div>
+            <h3>A Loreline organiza</h3>
+            <p>O que foi dito, o que você interpretou e o que ainda é lacuna ficam separados.</p>
+          </article>
+
+          <article class="hiw-card">
+            <p class="hiw-card-num">03</p>
+            <div class="hiw-card-shot" aria-hidden="true">
+              <div class="mini-artifact mini-artifact--unloop">
+                <p class="mini-meta">Unloop</p>
+                <ol class="mini-track">
+                  <li><span class="mini-step">01</span><span>o corpo aperta</span><span class="mini-tag">gatilho</span></li>
+                  <li><span class="mini-step">02</span><span>a resposta sai antes</span><span class="mini-tag">reação</span></li>
+                  <li><span class="mini-step">03</span><span>a conversa morre</span><span class="mini-tag">resposta</span></li>
+                  <li><span class="mini-step">04</span><span>volta mais forte</span><span class="mini-tag">reforço</span></li>
+                </ol>
+                <p class="mini-exit"><span class="mini-tag">saída</span><span>nomear o gatilho antes da reação</span></p>
+              </div>
+            </div>
+            <h3>O Unloop desenha o ciclo</h3>
+            <p>Gatilho, reação, resposta e reforço aparecem. E o lugar onde dá para sair.</p>
+          </article>
+
+          <article class="hiw-card">
+            <p class="hiw-card-num">04</p>
+            <div class="hiw-card-shot" aria-hidden="true">
+              <div class="mini-artifact mini-artifact--next">
+                <p class="mini-meta">próximo passo</p>
+                <p class="mini-topic">tema: planos de fim de semana</p>
+                <p class="mini-choices">conversar &middot; observar &middot; adiar</p>
+              </div>
+            </div>
+            <h3>Você decide</h3>
+            <p>Conversar, observar ou adiar. O próximo passo é escolhido por você.</p>
+          </article>
+        </div>
+
+        <div class="hiw-stage">
+          <div class="hiw-steps" role="tablist" aria-label="Etapas" data-lenis-prevent>
+            <button class="hiw-step is-active" role="tab" id="hiw-t1" aria-controls="hiw-p1" aria-selected="true" data-step="0">
+              <span class="hiw-num">01</span>
+              <span class="hiw-step-body"><strong>Você conta</strong></span>
+            </button>
+            <button class="hiw-step" role="tab" id="hiw-t2" aria-controls="hiw-p2" aria-selected="false" data-step="1">
+              <span class="hiw-num">02</span>
+              <span class="hiw-step-body"><strong>A Loreline organiza</strong></span>
+            </button>
+            <button class="hiw-step" role="tab" id="hiw-t3" aria-controls="hiw-p3" aria-selected="false" data-step="2">
+              <span class="hiw-num">03</span>
+              <span class="hiw-step-body"><strong>O Unloop desenha o ciclo</strong></span>
+            </button>
+            <button class="hiw-step" role="tab" id="hiw-t4" aria-controls="hiw-p4" aria-selected="false" data-step="3">
+              <span class="hiw-num">04</span>
+              <span class="hiw-step-body"><strong>Você decide</strong></span>
+            </button>
+          </div>
+
+          <div class="hiw-stage-panels">
+            <div class="hiw-panel" role="tabpanel" id="hiw-p1" aria-labelledby="hiw-t1">
+              <div class="artifact artifact--prompt">
+                <p class="artifact-meta">pergunta 3 de 7</p>
+                <p class="artifact-question">Como foi a última conversa difícil?</p>
+                <p class="artifact-input">Escreva ou fale, do seu jeito</p>
+                <p class="artifact-hint">Sem pressa. Você pode pausar e voltar depois.</p>
+              </div>
+            </div>
+            <div class="hiw-panel" role="tabpanel" id="hiw-p2" aria-labelledby="hiw-t2" hidden>
+              <div class="artifact artifact--loreline">
+                <p class="artifact-meta">Loreline</p>
+                <ol class="artifact-track">
+                  <li><span class="a-date">há 6 semanas</span><span class="a-text">conversa sobre planos foi adiada</span><span class="a-tag">lacuna</span></li>
+                  <li><span class="a-date">há 3 semanas</span><span class="a-text">&ldquo;você nunca me escuta&rdquo; foi dito</span><span class="a-tag">fato</span></li>
+                  <li><span class="a-date">há 3 semanas</span><span class="a-text">você ouviu isso como rejeição</span><span class="a-tag">interpretação</span></li>
+                  <li><span class="a-date">hoje</span><span class="a-text">o padrão aparece</span><span class="a-tag">hipótese</span></li>
+                </ol>
+              </div>
+            </div>
+            <div class="hiw-panel" role="tabpanel" id="hiw-p3" aria-labelledby="hiw-t3" hidden>
+              <div class="artifact artifact--unloop">
+                <p class="artifact-meta">Unloop</p>
+                <ol class="artifact-track">
+                  <li><span class="a-date">01</span><span class="a-text">algo é dito e o corpo aperta</span><span class="a-tag">gatilho</span></li>
+                  <li><span class="a-date">02</span><span class="a-text">a resposta sai antes de pensar</span><span class="a-tag">reação</span></li>
+                  <li><span class="a-date">03</span><span class="a-text">o outro se fecha, a conversa morre</span><span class="a-tag">resposta</span></li>
+                  <li><span class="a-date">04</span><span class="a-text">o mesmo ciclo volta mais forte</span><span class="a-tag">reforço</span></li>
+                </ol>
+                <p class="artifact-exit"><span class="a-tag">saída</span><span>nomear o gatilho antes da reação</span></p>
+              </div>
+            </div>
+            <div class="hiw-panel" role="tabpanel" id="hiw-p4" aria-labelledby="hiw-t4" hidden>
+              <div class="artifact artifact--next">
+                <p class="artifact-meta">próximo passo</p>
+                <p class="artifact-topic">tema: planos de fim de semana</p>
+                <ul class="artifact-choices">
+                  <li>conversar</li>
+                  <li>observar</li>
+                  <li>adiar</li>
+                </ul>
+                <p class="artifact-hint">A escolha é sua. Nada é cobrado depois.</p>
+              </div>
+            </div>
+            <p class="hiw-note">Fragmentos ilustrativos. Nenhum dado real é exibido nesta página.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O RELENS INCLUI MUITO MAIS -->
+    <section class="membership" aria-labelledby="mem-titulo">
+      <div class="wrap">
+        <p class="membership-intro">O Relens inclui muito mais.</p>
+        <h2 id="mem-titulo" class="membership-line"><span class="h-line">O que uma noite alcança <span>é só o começo.</span></span></h2>
+        <div class="membership-list membership-list--cols">
+          <div class="membership-row">
+            <span class="membership-label">Mapa completo da relação</span>
+            <span class="membership-desc">Fatos, interpretações, hipóteses e lacunas, separados por camada</span>
+          </div>
+          <div class="membership-row">
+            <span class="membership-label">Loreline</span>
+            <span class="membership-desc">Sua história e o contexto acumulado, na ordem em que aconteceram</span>
+          </div>
+          <div class="membership-row">
+            <span class="membership-label">Unloop</span>
+            <span class="membership-desc">O ciclo que se repete, com o ponto de saída marcado</span>
+          </div>
+          <div class="membership-row">
+            <span class="membership-label">Roteiro de conversa</span>
+            <span class="membership-desc">O próximo passo, escrito por você</span>
+          </div>
+          <div class="membership-row">
+            <span class="membership-label">Retorno em 7 dias</span>
+            <span class="membership-desc">Veja o que mudou depois da conversa</span>
+          </div>
+          <div class="membership-row">
+            <span class="membership-label">Perguntas em texto ou voz</span>
+            <span class="membership-desc">Uma pergunta por vez, no seu ritmo</span>
+          </div>
+          <div class="membership-row">
+            <span class="membership-label">Guias de conversa difícil</span>
+            <span class="membership-desc">Roteiros para os temas que sempre travam</span>
+          </div>
+          <div class="membership-row">
+            <span class="membership-label">Privado por padrão</span>
+            <span class="membership-desc">Nada é compartilhado sem você escolher</span>
+          </div>
+          <div class="membership-row">
+            <span class="membership-label">Sem depender do parceiro</span>
+            <span class="membership-desc">O mapa funciona sozinho, da sua perspectiva</span>
+          </div>
+          <div class="membership-row">
+            <span class="membership-label">Sem nota, sem veredito</span>
+            <span class="membership-desc">Nenhum julgamento sobre a relação</span>
+          </div>
+          <div class="membership-row">
+            <span class="membership-label">Corrigível a qualquer momento</span>
+            <span class="membership-desc">Mude um item e o mapa recalcula</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCÍPIOS -->
+    <section class="principles" id="principios" aria-labelledby="prin-titulo">
+      <div class="wrap">
+        <h2 id="prin-titulo">Guiado por princípios, não por palpites.</h2>
+        <div class="principles-grid">
+          <article class="principle">
+            <p class="principle-num">01</p>
+            <h3>Clareza antes de recomendação</h3>
+            <p>Fatos, interpretações e hipóteses aparecem separados. Nada vira verdade sem você confirmar.</p>
+          </article>
+          <article class="principle">
+            <p class="principle-num">02</p>
+            <h3>Perspectiva não é veredito</h3>
+            <p>O mapa mostra o seu ponto de vista. Ele nunca diagnostica o parceiro nem a relação.</p>
+          </article>
+          <article class="principle">
+            <p class="principle-num">03</p>
+            <h3>Segurança antes de engajamento</h3>
+            <p>Em situação de risco, o fluxo para. Confronto nunca é a recomendação; a saída segura aparece primeiro.</p>
+          </article>
+          <article class="principle">
+            <p class="principle-num">04</p>
+            <h3>Privacidade por padrão</h3>
+            <p>Seu mapa não é compartilhado com ninguém. Você corrige ou apaga qualquer item, e o mapa recalcula.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANIFESTO (fundo claro, separado dos princípios) -->
+    <section class="manifesto" id="manifesto" aria-labelledby="mani-titulo">
+      <div class="wrap">
+        <h2 id="mani-titulo" class="visually-hidden">Manifesto</h2>
+        <p class="mani-line"><span class="h-line">&ldquo;Todo mundo tem uma opinião <span>sobre a sua relação.</span>&rdquo;</span></p>
+        <p class="mani-sub">O Relens não diz o que você deve fazer. <span class="mani-sub--accent">Mostra o que está acontecendo, para você decidir.</span></p>
+      </div>
+    </section>
+
+    <!-- PERGUNTAS -->
+    <section class="faq" id="perguntas" aria-labelledby="faq-titulo">
+      <div class="wrap wrap--narrow">
+        <h2 id="faq-titulo">Perguntas frequentes</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Isso é terapia?</summary>
+            <p>Não. O Relens organiza a sua perspectiva em um mapa: fatos, interpretações, hipóteses e lacunas. Ele não substitui acompanhamento profissional e nunca emite um veredito sobre a relação.</p>
+          </details>
+          <details>
+            <summary>Preciso que meu parceiro participe?</summary>
+            <p>Não. O uso é individual e a primeira conversa difícil pode ser preparada sozinho. O parceiro só entra se você escolher, e cada pessoa mantém o seu espaço privado.</p>
+          </details>
+          <details>
+            <summary>O que acontece com o que eu escrevo?</summary>
+            <p>Você controla: corrige, exporta ou apaga. Nada é compartilhado por padrão, e toda conclusão mostra de onde veio para poder ser revisada.</p>
+          </details>
+          <details>
+            <summary>É um teste de compatibilidade?</summary>
+            <p>Não. Não existe nota. O mapa mostra padrões, evidências e lacunas a partir da sua perspectiva, sem classificar a relação como boa ou ruim.</p>
+          </details>
+          <details>
+            <summary>E se eu estiver em situação de risco?</summary>
+            <p>Segurança vem primeiro. O fluxo é interrompido, confronto nunca é recomendado e você vê rotas apropriadas de ajuda. O Relens não pede continuidade em cenário de risco.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONVITE + STATEMENT FINAL -->
+    <section class="closing" id="convite" aria-labelledby="closing-titulo">
+      <div class="wrap">
+        <h2 id="closing-titulo" class="closing-line"><span class="h-line">Clareza é o seu <span>superpoder.</span></span></h2>
+        <div class="invite-card">
+          <div class="invite-copy">
+            <h2 id="invite-titulo">O pré-lançamento abre em breve.</h2>
+            <p>Vagas por convite. Deixe seu melhor e-mail e receba o seu quando abrir.</p>
+            <ul class="invite-list">
+              <li>O mapa completo da sua relação, em 20 a 30 minutos</li>
+              <li>O roteiro da sua próxima conversa difícil</li>
+              <li>Retorno em 7 dias para ver o que mudou</li>
+            </ul>
+          </div>
+          <form class="invite-form js-email-form" data-kind="convite" novalidate>
+            <label for="invite-email">Seu melhor e-mail</label>
+            <div class="invite-row">
+              <input type="email" id="invite-email" name="email" placeholder="voce@email.com" required autocomplete="email">
+              <button class="btn btn--solid" type="submit">Quero o convite</button>
+            </div>
+            <p class="form-status" role="status">Sem spam. Só o convite quando abrir.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer footer--light">
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-lead">
+          <h2 class="footer-lead-title">Receba o convite quando abrir.</h2>
+          <p class="footer-lead-sub">O guia gratuito de como preparar uma conversa difícil, e o seu convite assim que o pré-lançamento abrir.</p>
+          <form class="footer-form js-email-form" data-kind="convite" novalidate>
+            <label for="footer-email" class="visually-hidden">Seu e-mail</label>
+            <div class="invite-row">
+              <input type="email" id="footer-email" name="email" placeholder="voce@email.com" required autocomplete="email">
+              <button class="btn btn--solid" type="submit">Quero o convite</button>
+            </div>
+            <p class="form-status" role="status">Um e-mail, um convite. Nada mais.</p>
+          </form>
+
+        </div>
+
+        <nav class="footer-cols" aria-label="Rodapé">
+          <div class="footer-col">
+            <h3>Mapa</h3>
+            <a href="#como-funciona">Loreline</a>
+            <a href="#como-funciona">Unloop</a>
+            <a href="#como-funciona">Próximo passo</a>
+            <a href="#como-funciona">Mapa privado</a>
+          </div>
+          <div class="footer-col">
+            <h3>Relens</h3>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#principios">Princípios</a>
+            <a href="#manifesto">Manifesto</a>
+            <a href="#perguntas">Perguntas frequentes</a>
+            <a href="#convite">Convite</a>
+          </div>
+          <div class="footer-col">
+            <h3>Recursos</h3>
+            <a href="#convite">Guia gratuito</a>
+            <a href="#perguntas">Conversa difícil</a>
+            <a href="mailto:ola@relens.com.br">Contato</a>
+            <a href="termos.html">Termos de uso</a>
+            <a href="privacidade.html">Privacidade</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-legal">
+        <p>O Relens não é terapia, diagnóstico, perícia ou serviço de emergência. Em situação de risco, procure ajuda especializada.</p>
+        <p class="footer-legal-links"><a href="termos.html">Termos</a> &middot; <a href="privacidade.html">Privacidade</a> &middot; <a href="mailto:ola@relens.com.br">Contato</a></p>
+      </div>
+    </div>
+    <p class="footer-wordmark" aria-hidden="true">relens</p>
+  </footer>
+
+  <script src="js/lenis.min.js"></script>
+  <script src="app.js?v=7"></script>
+</body>
+</html>
