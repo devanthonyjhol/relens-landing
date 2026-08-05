@@ -1835,20 +1835,25 @@ html.motion-ready .hero-video {
 
 @keyframes heroSettle { to { transform: scale(1); } }
 
-html.motion-ready .hero-media {
-  animation: heroParallax linear both;
-  animation-timeline: scroll(root);
-  animation-range: 0% 32%;
-  will-change: transform;
+/* Parallax e saida da hero exigem animation-timeline (scroll-driven).
+   Browsers sem suporte (ex.: Firefox) mantem a hero estatica e 100% visivel. */
+
+@supports (animation-timeline: scroll(root)) {
+  html.motion-ready .hero-media {
+    animation: heroParallax linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0% 32%;
+    will-change: transform;
+  }
+
+  html.motion-ready .hero-inner {
+    animation: heroExit linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0% 28%;
+  }
 }
 
 @keyframes heroParallax { to { transform: translateY(9vh); } }
-
-html.motion-ready .hero-inner {
-  animation: heroExit linear both;
-  animation-timeline: scroll(root);
-  animation-range: 0% 28%;
-}
 
 @keyframes heroExit { to { opacity: 0.28; transform: translateY(-26px); } }
 
@@ -1955,11 +1960,13 @@ html.net-slow.motion-ready .pillars.is-in::before {
 
 /* Rodape: wordmark com parallax lento */
 
-html.motion-ready .footer-wordmark {
-  animation: wmParallax linear both;
-  animation-timeline: scroll(root);
-  animation-range: 78% 100%;
-  will-change: transform;
+@supports (animation-timeline: scroll(root)) {
+  html.motion-ready .footer-wordmark {
+    animation: wmParallax linear both;
+    animation-timeline: scroll(root);
+    animation-range: 78% 100%;
+    will-change: transform;
+  }
 }
 
 @keyframes wmParallax {
