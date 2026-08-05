@@ -33,7 +33,7 @@
       document.documentElement.classList.remove("theme-switching");
     }, 700);
     if (themeToggle) {
-      themeToggle.textContent = theme === "dark" ? "Claro" : "Escuro";
+      themeToggle.setAttribute("aria-label", theme === "dark" ? "Alternar para o tema claro" : "Alternar para o tema escuro");
       themeToggle.setAttribute("aria-pressed", theme === "dark" ? "false" : "true");
     }
   }

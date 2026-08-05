@@ -30,6 +30,7 @@
   --rl-wash-hover: rgba(250, 247, 244, 0.05);
   --rl-wash-active: rgba(250, 247, 244, 0.08);
   --rl-wordmark-ghost: rgba(250, 247, 244, 0.055);
+  --rl-wordmark-ghost-strong: rgba(250, 247, 244, 0.115);
   --rl-radius-md: 12px;
   --rl-radius-lg: 18px;
   --rl-radius-xl: 26px;
@@ -63,6 +64,7 @@
   --rl-wash-hover: rgba(0, 0, 0, 0.05);
   --rl-wash-active: rgba(0, 0, 0, 0.08);
   --rl-wordmark-ghost: rgba(0, 0, 0, 0.055);
+  --rl-wordmark-ghost-strong: rgba(0, 0, 0, 0.115);
   color-scheme: light;
 }
 
@@ -263,19 +265,35 @@ h1, h2, h3, p { margin-top: 0; }
 
 .theme-toggle {
   font: inherit;
-  font-weight: 600;
-  font-size: 0.85rem;
-  line-height: 1;
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   color: var(--rl-solid-link);
   background: transparent;
   border: 1px solid var(--rl-solid-rule);
   border-radius: 999px;
-  padding: 0.55rem 1rem;
   cursor: pointer;
   transition: color 160ms ease, border-color 160ms ease;
+}
+
+.theme-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.theme-icon--moon {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-icon--sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-icon--moon {
+  display: block;
 }
 
 .theme-toggle:hover {
@@ -1517,7 +1535,7 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 .footer--light .footer-wordmark {
-  color: var(--rl-wordmark-ghost);
+  color: var(--rl-wordmark-ghost-strong);
 }
 
 /* ---------- Trilho de mapa (assinatura visual) ---------- */
@@ -1648,7 +1666,7 @@ h1, h2, h3, p { margin-top: 0; }
 
   .wordmark { font-size: 1.4rem; }
 
-  .theme-toggle { padding: 0.45rem 0.9rem; font-size: 0.82rem; }
+  .theme-toggle { width: 42px; height: 42px; }
 
   .nav .btn { margin-left: auto; }
 
